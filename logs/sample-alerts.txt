@@ -1,1 +1,33 @@
-alerts
+2026-01-05 09:45:12 ALERT_ID=1001 SOURCE=SIEM TYPE=BruteForce
+HOST=WIN-01 USER=admin
+MESSAGE="Multiple failed login attempts detected"
+SOURCE_IP=192.168.1.50
+SEVERITY=High
+
+2026-01-05 09:45:18 ALERT_ID=1002 SOURCE=SIEM TYPE=BruteForce
+HOST=WIN-01 USER=admin
+MESSAGE="Threshold exceeded: 6 failed logins in 2 minutes"
+SOURCE_IP=192.168.1.50
+SEVERITY=High
+
+2026-01-05 10:02:20 ALERT_ID=2001 SOURCE=SIEM TYPE=Malware
+HOST=WIN-02
+MESSAGE="EICAR test string detected by endpoint protection"
+FILE_PATH="C:\\Users\\Public\\eicar_test.txt"
+HASH="44d88612fea8a8f36de82e1278abb02f"
+SEVERITY=Critical
+
+2026-01-05 10:10:44 ALERT_ID=3001 SOURCE=SIEM TYPE=SuspiciousNetwork
+HOST=LINUX-SRV-01
+MESSAGE="Outbound connection to known malicious IP"
+DESTINATION_IP=185.220.101.1
+DESTINATION_PORT=443
+PROTOCOL=TCP
+SEVERITY=High
+
+2026-01-05 10:11:02 ALERT_ID=3002 SOURCE=SIEM TYPE=SuspiciousNetwork
+HOST=LINUX-SRV-01
+MESSAGE="Repeated outbound traffic to suspicious IP detected"
+DESTINATION_IP=185.220.101.1
+CONNECTION_COUNT=15
+SEVERITY=High
